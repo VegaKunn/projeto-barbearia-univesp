@@ -1,0 +1,187 @@
+INSTRUÇÕES PARA EXECUÇÃO DO PROJETO
+
+---
+
+1. REQUISITOS
+
+---
+
+É necessário ter instalado:
+
+Docker version 28.3.2
+Docker Compose version v2.38.2
+
+(O restante roda dentro do container automaticamente)
+
+---
+
+2. CONFIGURAÇÃO INICIAL
+
+---
+
+Criar o arquivo ".env.dev" na raiz do projeto com o seguinte conteúdo:
+
+SECRET_KEY=123456
+DJANGO_ALLOWED_HOSTS=*
+DJANGO_SETTINGS_MODULE=config.settings.dev
+
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+POSTGRES_DB=mydb
+POSTGRES_USER=myuser
+POSTGRES_PASSWORD=12345678
+
+EMAIL_HOST=sandbox.smtp.mailtrap.io
+EMAIL_PORT=2525
+EMAIL_HOST_USER=SEU_USER_MAILTRAP
+EMAIL_HOST_PASSWORD=SUA_SENHA_MAILTRAP
+
+---
+
+3. SUBIR O PROJETO
+
+---
+
+No terminal (dentro da pasta do projeto):
+
+docker compose -f docker-compose.dev.yml --env-file .env.dev up --build
+
+---
+
+4. ACESSO AO SISTEMA
+
+---
+
+Frontend:
+http://localhost:3000/
+
+Backend:
+http://localhost:8000/
+
+---
+
+5. CRIAR USUÁRIO ADMIN (OPCIONAL)
+
+---
+
+docker compose -f docker-compose.dev.yml --env-file .env.dev exec backend sh
+
+python manage.py createsuperuser
+
+Sugestão:
+Username: admin
+Senha: Admin@123
+
+---
+
+6. POPULAR BANCO DE DADOS (SEED)
+
+---
+
+docker compose -f docker-compose.dev.yml --env-file .env.dev exec backend python manage.py flush --no-input
+
+docker compose -f docker-compose.dev.yml --env-file .env.dev exec backend python manage.py seed
+
+---
+
+7. USUÁRIOS PARA TESTE
+
+---
+
+CLIENTE:
+Username: cliente0
+Senha: 12345678
+
+BARBEIRO:
+Username: joao
+Senha: 12345678
+
+---
+
+8. RESETAR BANCO DE DADOS
+
+---
+
+docker compose -f docker-compose.dev.yml --env-file .env.dev down --volumes
+
+docker compose -f docker-compose.dev.yml --env-file .env.dev up --build
+
+---
+
+9. OBSERVAÇÕES IMPORTANTES
+
+---
+
+* Um cliente não pode ter mais de um agendamento no mesmo dia
+* Caso ocorra erro ao agendar, trocar cliente ou data
+* Emails são simulados via Mailtrap
+* Caso a execução falhar, você pode usar o comando "npm i" na pasta frontend para instalar as dependencias do Node.js
+
+---
+
+10. VERSÕES UTILIZADAS
+
+---
+
+Docker: 28.3.2
+Docker Compose: v2.38.2
+
+Python: 3.12.13
+Django: 5.2.1
+
+PostgreSQL: 15.17
+Redis: 7.4.8
+
+Node: v22.22.2
+NPM: 10.9.7
+
+---
+
+11. DEPENDÊNCIAS BACKEND
+
+---
+
+amqp==5.3.1
+asgiref==3.8.1
+attrs==26.1.0
+billiard==4.2.4
+celery==5.5.3
+click==8.3.2
+click-didyoumean==0.3.1
+click-plugins==1.1.1.2
+click-repl==0.3.0
+coverage==7.8.0
+Django==5.2.1
+django-cors-headers==4.7.0
+django-extensions==4.1
+djangorestframework==3.16.0
+djangorestframework_simplejwt==5.5.0
+drf-spectacular==0.28.0
+inflection==0.5.1
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+kombu==5.5.4
+packaging==26.1
+pillow==11.2.1
+prompt_toolkit==3.0.52
+psycopg2-binary==2.9.10
+pydotplus==2.0.2
+pygraphviz==1.14
+PyJWT==2.9.0
+pyparsing==3.2.3
+python-dateutil==2.9.0.post0
+PyYAML==6.0.3
+redis==6.2.0
+referencing==0.37.0
+rpds-py==0.30.0
+six==1.17.0
+sqlparse==0.5.3
+typing_extensions==4.15.0
+tzdata==2025.2
+uritemplate==4.2.0
+vine==5.1.0
+wcwidth==0.6.0
+
+---
+
+## FIM
