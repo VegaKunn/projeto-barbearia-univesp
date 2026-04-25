@@ -14,23 +14,22 @@ class Command(BaseCommand):
         # -----------------------
         # ADMIN
         # -----------------------
-        if not Admin.objects.filter(username="admin").exists():
-            admin = Admin.objects.create_superuser(
-                username="admin",
-                password="Admin@123"
-            )
-            self.stdout.write("✅ Admin criado")
-        else:
-            admin = Admin.objects.get(username="admin")
+        Admin.objects.get_or_create(
+            username="admin",
+            defaults={"password": "Admin@123"}
+        )
 
         # -----------------------
-        # BARBERS
+        # BARBERS (MAIS VARIADOS)
         # -----------------------
         barbers = []
         barber_data = [
             ("joao", "João", "Silva"),
             ("carlos", "Carlos", "Souza"),
             ("pedro", "Pedro", "Lima"),
+            ("marcos", "Marcos", "Oliveira"),
+            ("lucas", "Lucas", "Ferreira"),
+            ("rafael", "Rafael", "Almeida"),
         ]
 
         for username, name, surname in barber_data:
@@ -53,7 +52,9 @@ class Command(BaseCommand):
         # CLIENTS
         # -----------------------
         clients = []
-        for i in range(5):
+
+        # clientes normais
+        for i in range(8):
             username = f"cliente{i}"
             client, created = Client.objects.get_or_create(
                 username=username,
@@ -68,6 +69,19 @@ class Command(BaseCommand):
                 client.save()
             clients.append(client)
 
+        # 🔥 CLIENTE SEM AGENDAMENTO (IMPORTANTE)
+        test_user, created = Client.objects.get_or_create(
+            username="teste",
+            defaults={
+                "email": "teste@teste.com",
+                "name": "Usuario",
+                "surname": "Teste",
+            }
+        )
+        if created:
+            test_user.set_password("12345678")
+            test_user.save()
+
         self.stdout.write("✅ Clientes criados")
 
         # -----------------------
@@ -78,6 +92,7 @@ class Command(BaseCommand):
                 ("Corte", 30),
                 ("Barba", 20),
                 ("Corte + Barba", 45),
+                ("Pigmentação", 25),
             ]:
                 Service.objects.get_or_create(
                     barber=barber,
@@ -91,7 +106,7 @@ class Command(BaseCommand):
         # AVAILABILITY
         # -----------------------
         for barber in barbers:
-            for i in range(5):
+            for i in range(7):
                 day = date.today() + timedelta(days=i)
                 Availability.objects.get_or_create(
                     barber=barber,
@@ -111,19 +126,17 @@ class Command(BaseCommand):
 
         created_count = 0
 
-        while created_count < 10:
-            client = random.choice(clients)
+        while created_count < 15:
+            client = random.choice(clients)  # NÃO inclui o "teste"
             barber = random.choice(barbers)
 
-            day = date.today() + timedelta(days=random.randint(0, 4))
+            day = date.today() + timedelta(days=random.randint(0, 6))
             slot_str = random.choice(["09:00", "10:00", "11:00", "14:00"])
             slot_time = time(int(slot_str.split(":")[0]), 0)
 
-            # evita cliente duplicado no mesmo dia
             if (client.id, day) in used_client_date:
                 continue
 
-            # evita barbeiro duplicado no mesmo horário
             if (barber.id, day, slot_time) in used_barber_slot:
                 continue
 
@@ -171,4 +184,5 @@ class Command(BaseCommand):
                     )
 
         self.stdout.write("✅ Reviews criadas")
+
         self.stdout.write(self.style.SUCCESS("🔥 Seed finalizada com sucesso!"))

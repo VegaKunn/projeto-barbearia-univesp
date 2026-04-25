@@ -89,7 +89,7 @@ docker compose -f docker-compose.dev.yml --env-file .env.dev exec backend python
 ---
 
 CLIENTE:
-Username: cliente0
+Username: teste
 Senha: 12345678
 
 BARBEIRO:
@@ -115,7 +115,6 @@ docker compose -f docker-compose.dev.yml --env-file .env.dev up --build
 * Um cliente não pode ter mais de um agendamento no mesmo dia
 * Caso ocorra erro ao agendar, trocar cliente ou data
 * Emails são simulados via Mailtrap
-* Caso a execução falhar, você pode usar o comando "npm i" na pasta frontend para instalar as dependencias do Node.js
 
 ---
 

@@ -14,7 +14,7 @@ function Footer() {
           <li>
             <Button
               className={styles.button}
-              href="https://github.com/"
+              href="https://github.com/VegaKunn/projeto-barbearia-univesp"
               size="md"
               color="animated" //
             >
@@ -23,19 +23,29 @@ function Footer() {
           </li>
 
           <li>
-            <Button className={styles.button} href="https://github.com/" size="md" color="animated">
+            <Button
+              className={styles.button}
+              href="https://github.com/VegaKunn/projeto-barbearia-univesp/tree/master/docs"
+              size="md"
+              color="animated"
+            >
               <Icon name="docs" size={'md'} />
             </Button>
           </li>
 
           <li>
-            <Button className={styles.button} href="https://github.com/" size="md" color="animated">
+            <Button
+              className={styles.button}
+              href="https://github.com/VegaKunn/projeto-barbearia-univesp/issues/new"
+              size="md"
+              color="animated"
+            >
               <Icon name="bug" size={'md'} />
             </Button>
           </li>
         </ul>
 
-        <div className={styles.copyright}> Projeto Univesp 2026.</div>
+        <div style={{ color: '#fff' }}>&copy; {new Date().getFullYear()} DRP01 - Grupo 12.</div>
       </div>
     </footer>
   );
