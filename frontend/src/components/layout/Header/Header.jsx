@@ -42,7 +42,7 @@ function Header() {
                 </Button>
 
                 <Button href="/register" size="md" color="secondary">
-                  Sign up
+                  Inscrever-se
                 </Button>
               </>
             )}

@@ -73,15 +73,15 @@ function RegisterClient() {
               <ul className={styles.features}>
                 <li>
                   <Icon name="appointment" size="sm" />
-                  <p>Book appointments online in seconds.</p>
+                  <p>Agende consultas online em segundos.</p>
                 </li>
                 <li>
                   <Icon name="availability" size="sm" />
-                  <p>Keep and update your personal profile.</p>
+                  <p>Mantenha e atualize seu perfil pessoal.</p>
                 </li>
                 <li>
                   <Icon name="calendar" size="sm" />
-                  <p>Track your appointment history easily.</p>
+                  <p>Acompanhe facilmente seu histórico de consultas.</p>
                 </li>
               </ul>
             </div>
@@ -105,7 +105,7 @@ function RegisterClient() {
             onSubmit={handleRegister}
             validate={validate} //
           >
-            <h2 className={styles.label}>Sign up</h2>
+            <h2 className={styles.label}>Inscrever-se</h2>
 
             <div className={styles.inputGroup}>
               <Input label="Name" name="name" type="text" required size="md" />
@@ -129,7 +129,7 @@ function RegisterClient() {
                     <Spinner size={'sm'} /> Signing up...
                   </>
                 ) : (
-                  'Create Account'
+                  'Criar Conta'
                 )}
               </span>
             </Button>

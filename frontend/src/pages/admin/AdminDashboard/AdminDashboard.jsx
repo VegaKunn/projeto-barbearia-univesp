@@ -47,13 +47,13 @@ function AdminDashboard() {
         <span className={styles.value}>{profile.total_barbers} </span>
       </StatCard>
 
-      {/* Total Appointments */}
-      <StatCard icon="appointment" label="Total Appointments">
+      {/* Total de consultas */}
+      <StatCard icon="appointment" label="Total de consultas">
         <span className={styles.value}>{profile.total_appointments} </span>
       </StatCard>
 
-      {/* Completed Appointments */}
-      <StatCard icon="completed" label="Completed Appointments">
+      {/* Consultas concluídas */}
+      <StatCard icon="completed" label="Consultas concluídas">
         <span className={styles.value}>{profile.completed_appointments} </span>
       </StatCard>
 

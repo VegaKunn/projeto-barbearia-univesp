@@ -47,7 +47,7 @@ function AdminBarbers() {
       <Pagination
         className={styles.clientBarbers}
         icon="barber"
-        label="Barbers"
+        label="Barbeiros"
         itemsPerPage={5}
         loading={isLoading}
         emptyMessage="No barbers found." //
@@ -69,7 +69,7 @@ function AdminBarbers() {
                   </>
                 ) : (
                   <>
-                    <Icon name="refresh" size="ty" /> Refresh barbers
+                    <Icon name="refresh" size="ty" /> Atualizar barbeiros
                   </>
                 )}
               </span>
@@ -81,35 +81,35 @@ function AdminBarbers() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="user" size="ty" black />
-            <span className={styles.tableTitleName}>User</span>
+            <span className={styles.tableTitleName}>Usuario</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="comment" size="ty" black />
-            <span className={styles.tableTitleName}>Description</span>
+            <span className={styles.tableTitleName}>Descrição</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="review" size="ty" black />
-            <span className={styles.tableTitleName}>Rating</span>
+            <span className={styles.tableTitleName}>Avaliação</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="check" size="ty" black />
-            <span className={styles.tableTitleName}>Joined</span>
+            <span className={styles.tableTitleName}>Agendou</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="dial" size="ty" black />
-            <span className={styles.tableTitleName}>Actions</span>
+            <span className={styles.tableTitleName}>Ações</span>
           </div>
         </Pagination.Column>
 
@@ -123,7 +123,7 @@ function AdminBarbers() {
             <Pagination.Cell>
               <div className={styles.descriptionContainer}>
                 <span className={barber.description ? styles.description : `${styles.description} ${styles.noDescription}`}>
-                  {barber.description || 'No description'}
+                  {barber.description || 'Nenhuma descrição'}
                 </span>
               </div>
             </Pagination.Cell>

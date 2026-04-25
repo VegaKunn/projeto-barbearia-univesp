@@ -88,7 +88,7 @@ function Login() {
               <p className={styles.note}>Don&apos;t have an account?</p>
 
               <Button href="/register" color="secondary" size="md" width="content">
-                Sign up!
+                Inscrever-se!
               </Button>
             </SidePanel.Actions>
           </SidePanel>

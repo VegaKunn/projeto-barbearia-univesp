@@ -149,7 +149,7 @@ class Admin(User):
     @property
     def completed_appointments(self):
         """
-        Returns the sum of all the completed appointments in the platform
+        Returns the sum of all the Consultas concluídas in the platform
         """
         from .appointment import Appointment, AppointmentStatus
         return Appointment.objects.filter(status=AppointmentStatus.COMPLETED.value).count()
@@ -173,7 +173,7 @@ class Admin(User):
     @property
     def total_revenue(self):
         """
-        Returns the sum of the services in all completed appointments, for total platform revenue
+        Returns the sum of the services in all Consultas concluídas, for total platform revenue
         """
         from .appointment import Appointment, AppointmentStatus
         revenue = (
@@ -251,7 +251,7 @@ class Client(User):
     @property
     def completed_appointments(self):
         """
-        Returns the sum of all the completed appointments for this client.
+        Returns the sum of all the Consultas concluídas for this client.
         """
         from .appointment import AppointmentStatus
         return self.appointments_created.filter(status=AppointmentStatus.COMPLETED.value).count()
@@ -275,7 +275,7 @@ class Client(User):
     @property
     def total_spent(self):
         """
-        Returns the sum of the services in all completed appointments for this barber.
+        Returns the sum of the services in all Consultas concluídas for this barber.
         """
         from .appointment import AppointmentStatus
         spent = (
@@ -349,7 +349,7 @@ class Barber(User):
     @property
     def completed_appointments(self):
         """
-        Returns the sum of all the completed appointments for this barber.
+        Returns the sum of all the Consultas concluídas for this barber.
         """
         from .appointment import AppointmentStatus
         return self.appointments_received.filter(status=AppointmentStatus.COMPLETED.value).count()
@@ -358,7 +358,7 @@ class Barber(User):
     def total_revenue(self):
         from .appointment import AppointmentStatus
         """
-        Returns the sum of the services in all completed appointments for this barber.
+        Returns the sum of the services in all Consultas concluídas for this barber.
         """
         revenue = (
             self.appointments_received.filter(status=AppointmentStatus.COMPLETED.value)

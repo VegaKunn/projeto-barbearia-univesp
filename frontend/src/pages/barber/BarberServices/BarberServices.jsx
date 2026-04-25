@@ -158,7 +158,7 @@ function BarberServices() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="dial" size="ty" black />
-            <span className={styles.tableTitleName}>Actions</span>
+            <span className={styles.tableTitleName}>Ações</span>
           </div>
         </Pagination.Column>
 

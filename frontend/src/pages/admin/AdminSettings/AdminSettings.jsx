@@ -49,15 +49,15 @@ function AdminSettings() {
   // While fetching latest profile data show loading spinner
   if (isLoading) return <Spinner />;
 
-  // Upload picture popup state handlers
+  // Upload de imagens popup state handlers
   const openUploadPicturePopup = () => setUploadPicturePopup(true);
   const closeUploadPicturePopup = () => setUploadPicturePopup(false);
 
-  // Delete picture popup state handlers
+  // Deletar imagens popup state handlers
   const openDeletePicturePopup = () => setDeletePicturePopup(true);
   const closeDeletePicturePopup = () => setDeletePicturePopup(false);
 
-  // Delete profile popup state handlers
+  // Deletar perfil popup state handlers
   const openDeleteProfilePopup = () => setDeleteProfilePopup(true);
   const closeDeleteProfilePopup = () => setDeleteProfilePopup(false);
 
@@ -120,7 +120,7 @@ function AdminSettings() {
     <>
       <div className={styles.adminSettings}>
         {/* Profile Update Card */}
-        <StatCard icon="pen" label="Update Profile">
+        <StatCard icon="pen" label="Atualizar perfil">
           {/* Profile Picture Management */}
           <section className={styles.profileImageSection}>
             <ProfileImage src={profile.profile_image} size="15rem" />
@@ -134,7 +134,7 @@ function AdminSettings() {
                 onClick={openUploadPicturePopup} //
               >
                 <Icon name="plus" size="ty" />
-                <span>Upload picture</span>
+                <span>Upload de imagens</span>
               </Button>
 
               <Button
@@ -146,7 +146,7 @@ function AdminSettings() {
                 onClick={openDeletePicturePopup} //
               >
                 <Icon name="trash" size="ty" black />
-                <span>Delete picture</span>
+                <span>Deletar imagens</span>
               </Button>
             </div>
           </section>
@@ -184,7 +184,7 @@ function AdminSettings() {
                       <Spinner size="sm" /> Saving...
                     </>
                   ) : (
-                    'Save Changes'
+                    'Salvar Mudanças'
                   )}
                 </span>
               </Button>
@@ -195,7 +195,7 @@ function AdminSettings() {
         </StatCard>
 
         {/* Profile Delete Card */}
-        <StatCard icon="trash" label="Delete Profile">
+        <StatCard icon="trash" label="Excluir perfil">
           {/* Profile Deletion Management */}
           <section className={styles.deleteProfileSection}>
             <Button
@@ -207,7 +207,7 @@ function AdminSettings() {
               onClick={openDeleteProfilePopup} //
             >
               <Icon name="warning" size="ty" black />
-              <span>Delete profile</span>
+              <span>Deletar perfil</span>
             </Button>
           </section>
         </StatCard>
@@ -245,14 +245,14 @@ function AdminSettings() {
         <Modal.Description>Are you sure you want to delete your profile picture? This action cannot be undone.</Modal.Description>
       </Modal>
 
-      {/* Delete Profile Modal */}
+      {/* Excluir perfil Modal */}
       <Modal
         open={deleteProfilePopup}
         action={{ submit: 'Delete', loading: 'Deleting...' }}
         onSubmit={handleDeleteProfile}
         onClose={closeDeleteProfilePopup}
       >
-        <Modal.Title icon="warning">Delete Profile</Modal.Title>
+        <Modal.Title icon="warning">Excluir perfil</Modal.Title>
         <Modal.Description>Are you sure you want to delete your profile? This action cannot be undone.</Modal.Description>
       </Modal>
     </>

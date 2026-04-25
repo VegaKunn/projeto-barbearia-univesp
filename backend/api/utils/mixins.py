@@ -228,7 +228,7 @@ class AppointmentValidationMixin:
         appointment_slot = attrs['slot']
 
         if Appointment.objects.filter(client=client, status=AppointmentStatus.ONGOING.value).exists():
-            raise serializers.ValidationError(f'Client: "{client}" already has an ONGOING appointment.')
+            raise serializers.ValidationError(f'Client: "{client}" já possui um compromisso EM ANDAMENTO.')
 
         if Appointment.objects.filter(client=client, date=appointment_date).exclude(status=AppointmentStatus.CANCELLED.value).exists():
             raise serializers.ValidationError(f'Appointment for the date "{appointment_date}" for the client: "{client}" already exists.')

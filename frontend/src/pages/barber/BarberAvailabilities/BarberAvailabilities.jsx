@@ -77,7 +77,7 @@ function BarberAvailabilities() {
       <Pagination.Column>
         <div className={styles.tableTitle}>
           <Icon name="date" size="ty" black />
-          <span className={styles.tableTitleName}>Date</span>
+          <span className={styles.tableTitleName}>Data</span>
         </div>
       </Pagination.Column>
 

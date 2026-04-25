@@ -10,25 +10,25 @@ import ProfileImage from '@components/ui/ProfileImage/ProfileImage';
 // Define role-based navigation
 const adminNav = [
   { to: '/admin/dashboard', label: 'Dashboard', icon: 'dashboard' },
-  { to: '/admin/barbers', label: 'Barbers', icon: 'barber' },
-  { to: '/admin/clients', label: 'Clients', icon: 'client' },
-  { to: '/admin/appointments', label: 'Appointments', icon: 'appointment' },
-  { to: '/admin/settings', label: 'Settings', icon: 'settings' },
+  { to: '/admin/barbers', label: 'Barbeiros', icon: 'barber' },
+  { to: '/admin/clients', label: 'Clientes', icon: 'client' },
+  { to: '/admin/appointments', label: 'Agendamentos', icon: 'appointment' },
+  { to: '/admin/settings', label: 'Configurações', icon: 'settings' },
 ];
 const barberNav = [
   { to: '/barber/dashboard', label: 'Dashboard', icon: 'dashboard' },
   { to: '/barber/services', label: 'Services', icon: 'service' },
-  { to: '/barber/appointments', label: 'Appointments', icon: 'appointment' },
-  { to: '/barber/availabilities', label: 'Availabilities', icon: 'availability' },
+  { to: '/barber/appointments', label: 'Agendamentos', icon: 'appointment' },
+  { to: '/barber/availabilities', label: 'Disponibilidade', icon: 'availability' },
   { to: '/barber/reviews', label: 'Reviews', icon: 'review' },
-  { to: '/barber/settings', label: 'Settings', icon: 'settings' },
+  { to: '/barber/settings', label: 'Configurações', icon: 'settings' },
 ];
 const clientNav = [
   { to: '/client/dashboard', label: 'Dashboard', icon: 'dashboard' },
-  { to: '/client/barbers', label: 'Barbers', icon: 'barber' },
-  { to: '/client/appointments', label: 'Appointments', icon: 'appointment' },
+  { to: '/client/barbers', label: 'Barbeiros', icon: 'barber' },
+  { to: '/client/appointments', label: 'Agendamentos', icon: 'appointment' },
   { to: '/client/reviews', label: 'Reviews', icon: 'review' },
-  { to: '/client/settings', label: 'Settings', icon: 'settings' },
+  { to: '/client/settings', label: 'Configurações', icon: 'settings' },
 ];
 
 function Sidebar() {

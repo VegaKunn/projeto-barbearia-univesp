@@ -79,7 +79,7 @@ function AdminClients() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="user" size="ty" black />
-            <span className={styles.tableTitleName}>User</span>
+            <span className={styles.tableTitleName}>Usuario</span>
           </div>
         </Pagination.Column>
 
@@ -114,7 +114,7 @@ function AdminClients() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="check" size="ty" black />
-            <span className={styles.tableTitleName}>Joined</span>
+            <span className={styles.tableTitleName}>Agendou</span>
           </div>
         </Pagination.Column>
 

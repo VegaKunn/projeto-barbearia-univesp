@@ -101,7 +101,7 @@ function BarberReviews() {
                   </>
                 ) : (
                   <>
-                    <Icon name="refresh" size="ty" /> Refresh reviews
+                    <Icon name="refresh" size="ty" /> Atualizar avaliações
                   </>
                 )}
               </span>
@@ -120,21 +120,21 @@ function BarberReviews() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="rating" size="ty" black />
-            <span className={styles.tableTitleName}>Rating</span>
+            <span className={styles.tableTitleName}>Avaliação</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="comment" size="ty" black />
-            <span className={styles.tableTitleName}>Comment</span>
+            <span className={styles.tableTitleName}>Comentarios</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="date" size="ty" black />
-            <span className={styles.tableTitleName}>Date</span>
+            <span className={styles.tableTitleName}>Data</span>
           </div>
         </Pagination.Column>
 

@@ -57,7 +57,7 @@ def send_client_reminder_email(client, barber, appointment_datetime):
     subject = '[BarberManager] Appointment Reminder'
     message = (
         f'Hi {client.name} {client.surname} (username: {client.username}),\n\n'
-        f'This is a reminder for your upcoming appointment with the barber {barber.name} {barber.surname} '
+        f'This is a reminder for your Consulta futura with the barber {barber.name} {barber.surname} '
         f'on {appointment_datetime.strftime("%Y-%m-%d at %H:%M")}.\n\n'
         'Please arrive on time.\n'
         'Thank you for using BarberManager!'
@@ -69,7 +69,7 @@ def send_barber_reminder_email(barber, client, appointment_datetime):
     """
     Sends a reminder email to the barber 1 hour before an appointment.
     """
-    subject = '[BarberManager] Upcoming Appointment Reminder'
+    subject = '[BarberManager] Consulta futura Reminder'
     message = (
         f'Dear {barber.name} {barber.surname} (username: {barber.username}),\n\n'
         f'This is a reminder that you have an appointment with the client {client.name} {client.surname} '

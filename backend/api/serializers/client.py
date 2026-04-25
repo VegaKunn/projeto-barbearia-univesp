@@ -249,7 +249,7 @@ class DeleteClientReviewSerializer(ClientValidationMixin, ReviewValidationMixin,
 
 class GetClientCompletedBarbersSerializer(GetBarbersMixin, ClientValidationMixin, serializers.Serializer):
     """
-    Returns all barbers with whom the client has completed appointments.
+    Returns all barbers with whom the client has Consultas concluídas.
     """
     def validate(self, attrs):
         attrs = self.validate_client(attrs)

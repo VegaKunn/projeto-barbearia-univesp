@@ -138,7 +138,7 @@ function RegisterBarber() {
               onSubmit={handleRegister}
               validate={validate} //
             >
-              <h2 className={styles.label}>Sign up</h2>
+              <h2 className={styles.label}>Inscrever-se</h2>
 
               <div className={styles.inputGroup}>
                 <Input label="Name" name="name" type="text" required size="md" />
@@ -162,7 +162,7 @@ function RegisterBarber() {
                       <Spinner size={'sm'} /> Signing up...
                     </>
                   ) : (
-                    'Create Account'
+                    'Criar Conta'
                   )}
                 </span>
               </Button>

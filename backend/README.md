@@ -80,6 +80,6 @@ Model Example:
 Admin statistics dashboard includes:
 
 - Total revenue
-- Total appointments
+- Total de consultas
 - Review count
 - Average barber rating

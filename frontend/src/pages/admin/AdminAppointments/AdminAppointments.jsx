@@ -139,7 +139,7 @@ function AdminAppointments() {
                   </>
                 ) : (
                   <>
-                    <Icon name="refresh" size="ty" /> Refresh appointments
+                    <Icon name="refresh" size="ty" /> Atualizar agendamentos
                   </>
                 )}
               </span>
@@ -158,14 +158,14 @@ function AdminAppointments() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="calendar" size="ty" black />
-            <span className={styles.tableTitleName}>Date</span>
+            <span className={styles.tableTitleName}>Data</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="barber" size="ty" black />
-            <span className={styles.tableTitleName}>Barber</span>
+            <span className={styles.tableTitleName}>Barbeiros</span>
           </div>
         </Pagination.Column>
 

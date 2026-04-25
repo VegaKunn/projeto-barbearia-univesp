@@ -114,7 +114,7 @@ function ClientAppointments() {
     navigate({ search: params.toString() }, { replace: true });
   }, [preselectBarberId, location.search, navigate]);
 
-  // Book appointment popup state handlers
+  // Agende uma consulta popup state handlers
   const openBookPopup = () => setBookPopup(true);
   const closeBookPopup = () => {
     setBookPopup(false);
@@ -174,7 +174,7 @@ function ClientAppointments() {
       <Input
         type="checkbox"
         name="services"
-        label="Select one or more services"
+        label="Selecione os serviços"
         fetcher={() => fetchServices(fields.barber_id)}
         mapOption={(service) => ({ key: String(service.id), value: `${service.name} $${service.price}` })}
         required //
@@ -389,7 +389,7 @@ function ClientAppointments() {
                   </>
                 ) : (
                   <>
-                    <Icon name="refresh" size="ty" /> Refresh appointments
+                    <Icon name="refresh" size="ty" /> Atualizar agendamentos
                   </>
                 )}
               </span>
@@ -403,7 +403,7 @@ function ClientAppointments() {
               onClick={openBookPopup} //
             >
               <Icon name="plus" size="ty" />
-              <span>Book appointment</span>
+              <span>Agende uma consulta</span>
             </Button>
           </div>
         </Pagination.Action>
@@ -412,14 +412,14 @@ function ClientAppointments() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="barber" size="ty" black />
-            <span className={styles.tableTitleName}>Barber</span>
+            <span className={styles.tableTitleName}>Barbeiros</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="calendar" size="ty" black />
-            <span className={styles.tableTitleName}>Date</span>
+            <span className={styles.tableTitleName}>Data</span>
           </div>
         </Pagination.Column>
 
@@ -454,7 +454,7 @@ function ClientAppointments() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="dial" size="ty" black />
-            <span className={styles.tableTitleName}>Actions</span>
+            <span className={styles.tableTitleName}>Ações</span>
           </div>
         </Pagination.Column>
 
@@ -544,24 +544,26 @@ function ClientAppointments() {
         {/* STEP 2: Select Services */}
         <Modal.Step
           validate={(fields) =>
-            !fields.services || fields.services.length === 0 ? 'You must select at least one service.' : undefined
+            !fields.services || fields.services.length === 0 ? 'Você deve selecionar pelo menos um serviço.' : undefined
           }
         >
-          <Modal.Title icon="service">Choose Services</Modal.Title>
-          <Modal.Description>Select one or more services offered by your selected barber.</Modal.Description>
+          <Modal.Title icon="service">Selecione os serviços</Modal.Title>
+          <Modal.Description>Selecione um ou mais serviços oferecidos pelo barbeiro escolhido.</Modal.Description>
           <ServiceSelect />
         </Modal.Step>
 
         {/* STEP 3: Select Date & Time slot */}
         <Modal.Step validate={(fields) => (!fields.date || !fields.slot ? 'Please select date and time slot.' : undefined)}>
-          <Modal.Title icon="calendar">Choose Date & Time</Modal.Title>
-          <Modal.Description>Select an available date and time slot. Only available slots are shown.</Modal.Description>
+          <Modal.Title icon="calendar">Selecione a data e a hora.</Modal.Title>
+          <Modal.Description>
+            Selecione uma data e horário disponíveis. Somente os horários disponíveis serão exibidos.
+          </Modal.Description>
           <DateSlotSelect />
         </Modal.Step>
 
         {/* STEP 4: Confirmation */}
         <Modal.Step>
-          <Modal.Title icon="check">Confirm</Modal.Title>
+          <Modal.Title icon="check">Confirme</Modal.Title>
           <Modal.Description>
             <ConfirmationStep />
           </Modal.Description>
@@ -575,10 +577,10 @@ function ClientAppointments() {
         onSubmit={() => handleCancelAppointment(cancelPopup.appointment?.id)}
         onClose={closeCancelPopup}
       >
-        <Modal.Title icon="warning">Cancel Appointment</Modal.Title>
+        <Modal.Title icon="warning">Cancelar consulta</Modal.Title>
         <Modal.Description>
-          Are you sure you want to cancel your appointment at <strong>{cancelPopup.appointment?.date}</strong>? This action cannot
-          be undone.
+          Tem certeza de que deseja cancelar seu agendamento em <strong>{cancelPopup.appointment?.date}</strong>? Esta ação não
+          pode ser desfeita.
         </Modal.Description>
       </Modal>
     </>

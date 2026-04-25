@@ -108,7 +108,7 @@ function BarberAppointments() {
                   </>
                 ) : (
                   <>
-                    <Icon name="refresh" size="ty" /> Refresh appointments
+                    <Icon name="refresh" size="ty" /> Atualizar agendamentos
                   </>
                 )}
               </span>
@@ -127,7 +127,7 @@ function BarberAppointments() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="calendar" size="ty" black />
-            <span className={styles.tableTitleName}>Date</span>
+            <span className={styles.tableTitleName}>Data</span>
           </div>
         </Pagination.Column>
 

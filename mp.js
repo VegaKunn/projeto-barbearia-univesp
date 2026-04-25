@@ -2,14 +2,15 @@ const fs = require("fs");
 const path = require("path");
 
 /**
- * Busca uma palavra dentro dos arquivos do projeto
+ * Busca e substitui uma frase dentro dos arquivos do projeto
  * @param {string} dir Diretório inicial
- * @param {string} palavra Palavra a buscar
+ * @param {string} frase Frase a buscar
+ * @param {string} novaFrase Frase para substituir
  * @param {string[]} ignoreDirs Pastas para ignorar
  * @param {string} base Caminho relativo
  * @returns {Array<{file: string, line: number, text: string}>}
  */
-function buscarPalavra(dir, palavra, ignoreDirs = [], base = "") {
+function buscarESubstituir(dir, frase, novaFrase, ignoreDirs = [], base = "") {
   let resultados = [];
 
   const itens = fs.readdirSync(dir);
@@ -23,25 +24,36 @@ function buscarPalavra(dir, palavra, ignoreDirs = [], base = "") {
       if (ignoreDirs.includes(item)) continue;
 
       resultados = resultados.concat(
-        buscarPalavra(fullPath, palavra, ignoreDirs, relativePath),
+        buscarESubstituir(fullPath, frase, novaFrase, ignoreDirs, relativePath),
       );
     } else {
       try {
-        const conteudo = fs.readFileSync(fullPath, "utf-8");
+        let conteudo = fs.readFileSync(fullPath, "utf-8");
+        let alterado = false;
 
         const linhas = conteudo.split("\n");
 
         linhas.forEach((linha, index) => {
-          if (linha.toLowerCase().includes(palavra.toLowerCase())) {
+          if (linha.includes(frase)) {
             resultados.push({
               file: relativePath,
               line: index + 1,
               text: linha.trim(),
             });
+
+            // Substituição (case-insensitive)
+            const regex = new RegExp(frase, "gi");
+            linhas[index] = linha.replace(regex, novaFrase);
+            alterado = true;
           }
         });
+
+        // Só reescreve o arquivo se houve alteração
+        if (alterado) {
+          fs.writeFileSync(fullPath, linhas.join("\n"), "utf-8");
+        }
       } catch (err) {
-        // Ignora arquivos que não podem ser lidos (binários, etc)
+        // Ignora arquivos não legíveis
       }
     }
   }
@@ -50,11 +62,12 @@ function buscarPalavra(dir, palavra, ignoreDirs = [], base = "") {
 }
 
 // Exemplo de uso
-const ignore = ["node_modules", ".git", "dist", ".github", "backend"];
-const palavra =
-  "Select an available date and time slot. Only available slots are shown.";
+const ignore = ["node_modules", ".git", "dist", ".github"];
 
-const resultados = buscarPalavra(process.cwd(), palavra, ignore);
+const frase = "Barbeiros</span>";
+const novaFrase = "Barbeiros</span>";
+
+const resultados = buscarESubstituir(process.cwd(), frase, novaFrase, ignore);
 
 // Exibir resultados
 resultados.forEach((r) => {

@@ -210,7 +210,7 @@ function AdminAvailabilities() {
               <Pagination.Column>
                 <div className={styles.tableTitle}>
                   <Icon name="date" size="ty" black />
-                  <span className={styles.tableTitleName}>Date</span>
+                  <span className={styles.tableTitleName}>Data</span>
                 </div>
               </Pagination.Column>
 
@@ -224,7 +224,7 @@ function AdminAvailabilities() {
               <Pagination.Column>
                 <div className={styles.tableTitle}>
                   <Icon name="dial" size="ty" black />
-                  <span className={styles.tableTitleName}>Actions</span>
+                  <span className={styles.tableTitleName}>Ações</span>
                 </div>
               </Pagination.Column>
 

@@ -92,8 +92,8 @@ function ClientDashboard() {
 
   return (
     <div className={styles.clientDashboard}>
-      {/* Upcoming Appointment */}
-      <StatCard icon="availability" label="Upcoming Appointment">
+      {/* Consulta futura */}
+      <StatCard icon="availability" label="Consulta futura">
         {profile.upcoming_appointment ? (
           <div className={styles.upcomingAppointmentValue}>
             <span className={styles.upcomingAppointmentSlot}>{profile.upcoming_appointment?.slot}</span>
@@ -104,20 +104,20 @@ function ClientDashboard() {
         )}
       </StatCard>
 
-      {/* Total Appointments */}
-      <StatCard icon="calendar" label="Total Appointments">
+      {/* Total de consultas */}
+      <StatCard icon="calendar" label="Total de consultas">
         <span className={styles.value}>{profile.total_appointments}</span>
       </StatCard>
 
-      {/* Completed Appointments */}
-      <StatCard icon="completed" label="Completed Appointments">
+      {/* Consultas concluídas */}
+      <StatCard icon="completed" label="Consultas concluídas">
         <span className={styles.value}>{profile.completed_appointments}</span>
       </StatCard>
 
-      {/* Recent Appointments */}
+      {/* Consultas concluídas */}
       <Pagination
         icon="date"
-        label="Recent Appointments"
+        label="Consultas concluídas"
         itemsPerPage={5}
         emptyMessage="No appointments found." //
       >
@@ -129,14 +129,14 @@ function ClientDashboard() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="client" size="ty" black />
-            <span className={styles.tableTitleName}>Barber</span>
+            <span className={styles.tableTitleName}>Barbeiros</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="calendar" size="ty" black />
-            <span className={styles.tableTitleName}>Date</span>
+            <span className={styles.tableTitleName}>Data</span>
           </div>
         </Pagination.Column>
 
@@ -183,10 +183,10 @@ function ClientDashboard() {
         ))}
       </Pagination>
 
-      {/* Latest Reviews */}
+      {/* Avaliações mais recentes */}
       <Pagination
         icon="review"
-        label="Latest Reviews"
+        label="Avaliações mais recentes"
         itemsPerPage={5}
         emptyMessage="No reviews yet" //
       >
@@ -198,28 +198,28 @@ function ClientDashboard() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="barber" size="ty" black />
-            <span className={styles.tableTitleName}>Barber</span>
+            <span className={styles.tableTitleName}>Barbeiros</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="rating" size="ty" black />
-            <span className={styles.tableTitleName}>Rating</span>
+            <span className={styles.tableTitleName}>Avaliação</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="comment" size="ty" black />
-            <span className={styles.tableTitleName}>Comment</span>
+            <span className={styles.tableTitleName}>Comentarios</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="date" size="ty" black />
-            <span className={styles.tableTitleName}>Date</span>
+            <span className={styles.tableTitleName}>Data</span>
           </div>
         </Pagination.Column>
 

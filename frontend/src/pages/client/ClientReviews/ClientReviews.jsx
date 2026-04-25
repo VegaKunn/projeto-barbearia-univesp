@@ -108,7 +108,7 @@ function BarberReviews() {
     navigate({ search: params.toString() }, { replace: true });
   }, [preselectBarberId, location.search, navigate]);
 
-  // Post review popup state handlers
+  // Postar review popup state handlers
   const openPostPopup = () => setPostPopup(true);
   const closePostPopup = () => {
     setPostPopup(false);
@@ -151,7 +151,7 @@ function BarberReviews() {
   };
 
   /**
-   * Function that fetches and returns the barbers with whom the client has completed appointments from the API (useCallback to fix endless loop)
+   * Function that fetches and returns the barbers with whom the client has Consultas concluídas from the API (useCallback to fix endless loop)
    */
   const fetchCompletedBarbers = useCallback(async () => {
     const { barbers } = await api.client.getClientCompletedBarbers();
@@ -264,7 +264,7 @@ function BarberReviews() {
                   </>
                 ) : (
                   <>
-                    <Icon name="refresh" size="ty" /> Refresh reviews
+                    <Icon name="refresh" size="ty" /> Atualizar avaliações
                   </>
                 )}
               </span>
@@ -278,7 +278,7 @@ function BarberReviews() {
               onClick={openPostPopup} //
             >
               <Icon name="plus" size="ty" />
-              <span>Post review</span>
+              <span>Postar review</span>
             </Button>
           </div>
         </Pagination.Action>
@@ -287,35 +287,35 @@ function BarberReviews() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="barber" size="ty" black />
-            <span className={styles.tableTitleName}>Barber</span>
+            <span className={styles.tableTitleName}>Barbeiros</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="rating" size="ty" black />
-            <span className={styles.tableTitleName}>Rating</span>
+            <span className={styles.tableTitleName}>Avaliação</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="comment" size="ty" black />
-            <span className={styles.tableTitleName}>Comment</span>
+            <span className={styles.tableTitleName}>Comentarios</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="date" size="ty" black />
-            <span className={styles.tableTitleName}>Date</span>
+            <span className={styles.tableTitleName}>Data</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="dial" size="ty" black />
-            <span className={styles.tableTitleName}>Actions</span>
+            <span className={styles.tableTitleName}>Ações</span>
           </div>
         </Pagination.Column>
 
@@ -381,7 +381,7 @@ function BarberReviews() {
         {/* STEP 1: Select Barber */}
         <Modal.Step validate={(fields) => (!fields.barber_id ? 'You must select a barber.' : undefined)}>
           <Modal.Title icon="barber">Choose Barber</Modal.Title>
-          <Modal.Description>Please choose the barber you want to review.</Modal.Description>
+          <Modal.Description>Por favor, selecione o barbeiro que deseja avaliar.</Modal.Description>
 
           <Input
             type="dropdown"

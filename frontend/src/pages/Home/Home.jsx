@@ -34,7 +34,7 @@ function Home() {
                   <Icon name="appointment" size="sm" />
                   <p>Effortless Appointments</p>
                 </span>
-                <span>Let customers book themselves. Manage your schedule with ease.</span>
+                <span>Permita que os clientes façam suas próprias reservas. Gerencie sua agenda com facilidade.</span>
               </li>
 
               <li>
@@ -42,24 +42,24 @@ function Home() {
                   <Icon name="client" size="sm" />
                   <p>Customer Relationship</p>
                 </span>
-                <span>Track client history, notes, and preferences for unbeatable service.</span>
+                <span>Acompanhe o histórico, as anotações e as preferências do cliente para um atendimento imbatível.</span>
               </li>
 
               <li>
                 <span className={styles.featureTitle}>
                   <Icon name="review" size="sm" /> <p>Reviews & Growth</p>
                 </span>
-                <span>Collect feedback, drive loyalty and get insights to grow your business.</span>
+                <span>Colete feedback, fidelize clientes e obtenha insights para expandir seu negócio.</span>
               </li>
             </ul>
           </SidePanel.Inner>
 
           <SidePanel.Actions>
             <Button href="/register" size="lg" color="secondary">
-              Get started
+              Vamos Começar
             </Button>
 
-            <p className={styles.note}>No credit card required. Cancel anytime.</p>
+            <p className={styles.note}>Colete feedback, fidelize clientes e obtenha insights para expandir seu negócio.</p>
           </SidePanel.Actions>
         </SidePanel>
       </Hero.Left>

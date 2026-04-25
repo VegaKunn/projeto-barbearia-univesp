@@ -15,7 +15,7 @@ This application includes secure registration, appointment booking and reminders
 - **Role-based accounts:**  
   - **Admins:** Created manually via shell for full shop management.
   - **Clients:** Self-register via the web; must verify email.
-  - **Barbers:** Can sign up only after an admin invitation; registration is completed through a secure email link.
+  - **Barbers:** Can Inscrever-se only after an admin invitation; registration is completed through a secure email link.
 - All users can:
   - Log in with username or email (JWT authentication).
   - Recover/reset passwords via email-secured links.
@@ -34,14 +34,14 @@ This application includes secure registration, appointment booking and reminders
 
 ### Booking & Scheduling
 - **Clients:**
-  - Book appointments by browsing active barbers, viewing their services and real-time availabilities.
+  - Agende uma consultas by browsing active barbers, viewing their services and real-time availabilities.
   - Only one active appointment at a time.
   - Receive automatic email reminders.
   - Cancel bookings if appointment is still pending.
   - View past appointment history.
 - **Barbers:**
   - Manage their service offerings (add, edit, remove).
-  - Access their schedule of ongoing and upcoming appointments.
+  - Access their schedule of ongoing and Consulta futuras.
   - Receive client reviews and ratings.
 
 ### Reviews & Ratings

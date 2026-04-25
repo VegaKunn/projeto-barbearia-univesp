@@ -198,14 +198,14 @@ def manage_client_reviews(request, review_id):
 
 @extend_schema(
 responses={200: GetClientCompletedBarbersSerializer},
-description="Client only: Returns all barbers with whom the client has completed appointments.",
+description="Client only: Returns all barbers with whom the client has Consultas concluídas.",
 )
 @api_view(['GET'])
 @permission_classes([IsClientRole])
 @parser_classes([JSONParser]) 
 def get_client_completed_barbers(request):
     """
-    Client only: Returns all barbers with whom the authenticated client has completed appointments
+    Client only: Returns all barbers with whom the authenticated client has Consultas concluídas
     """
     serializer = GetClientCompletedBarbersSerializer(data={}, context={'client': request.user})
     serializer.is_valid(raise_exception=True)

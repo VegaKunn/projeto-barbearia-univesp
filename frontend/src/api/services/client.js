@@ -80,7 +80,7 @@ export async function deleteClientReview(reviewId) {
 }
 
 /**
- * Retrieves all the barbers with whom the client has completed appointments.
+ * Retrieves all the barbers with whom the client has Consultas concluídas.
  */
 export async function getClientCompletedBarbers() {
   const { data } = await api.instance.get(ENDPOINTS.client.barbers);
