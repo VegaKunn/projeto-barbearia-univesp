@@ -1,69 +1,186 @@
-<div align="center">
-  <img src="../frontend/assets/images/logo.png" height="100px" alt="BarberManager Logo"/>
-  <h3>BarberManager – Management Software for Barber Shops</h3>
-</div>
+INSTRUÇÕES PARA EXECUÇÃO DO PROJETO
 
-# Description
+---
 
-**BarberManager** is a comprehensive SaaS platform designed to streamline, digitalize, and optimize everyday operations in barber shops. With tools for booking, staff, client, and schedule management, BarberManager ensures efficient workflows for admins, barbers, and clients alike.
+1. REQUISITOS
 
-This application includes secure registration, appointment booking and reminders, reviews, detailed management dashboards, and user profile features, all built on a Django RESTful API.
+---
 
-## Core Features
+É necessário ter instalado:
 
-### User & Account Management
-- **Role-based accounts:**  
-  - **Admins:** Created manually via shell for full shop management.
-  - **Clients:** Self-register via the web; must verify email.
-  - **Barbers:** Can Inscrever-se only after an admin invitation; registration is completed through a secure email link.
-- All users can:
-  - Log in with username or email (JWT authentication).
-  - Recover/reset passwords via email-secured links.
-  - Edit or permanently delete their profile and associated data.
-  - Upload or delete their profile pictures.
+Docker version 28.3.2
+Docker Compose version v2.38.2
 
-### Registration & Authentication Flow
-- Admins: Created via CLI, making them inaccessible via public endpoints.
-- Clients:  
-  - Register via `/auth/register/`: must provide full personal details, a unique username, and valid email.
-  - Email confirmation required for activation (`/auth/verify/{uidb64}/{token}/`).
-- Barbers:
-  - Admins invite via `/admin/barbers/invite/` (email only).
-  - Complete registration via magical invite link (`/auth/register/{uidb64}/{token}/`) by setting username, password, and personal details.
-- Robust JWT token-based authentication (login, logout, refresh, me endpoints).
+(O restante roda dentro do container automaticamente)
 
-### Booking & Scheduling
-- **Clients:**
-  - Agende uma consultas by browsing active barbers, viewing their services and real-time availabilities.
-  - Only one active appointment at a time.
-  - Receive automatic email reminders.
-  - Cancel bookings if appointment is still pending.
-  - View past appointment history.
-- **Barbers:**
-  - Manage their service offerings (add, edit, remove).
-  - Access their schedule of ongoing and Consulta futuras.
-  - Receive client reviews and ratings.
+---
 
-### Reviews & Ratings
-- Clients can leave one review per completed appointment for a barber, editable or removable after posting.
-- Barbers can easily access, monitor, and respond to their client feedback.
+2. CONFIGURAÇÃO INICIAL
 
-### Staff & Resource Administration
-- **Admin Dashboard:**
-  - Full CRUD for barber and client management (`/admin/barbers/`, `/admin/clients/`).
-  - Manage barber availabilities: add, edit, or remove availability slots for each staff member.
-  - Invite new barbers via email; remove barbers by user ID.
-  - Monitor all salon appointments and aggregate activity statistics for informed business decisions.
+---
 
-### Public-Facing Information
-- Anyone can:
-  - Browse a directory of barbers, their public profiles, offered services, and availability slots.
-  - View public client profiles as appropriate.
+Criar o arquivo ".env.dev" na raiz do projeto com o seguinte conteúdo:
 
-## Technical Highlights
-- **RESTful API-first design**: All operations exposed for secure, flexible integrations (`/api/`).
-- **Robust authentication:** JWT-based user session management.
-- **Email-driven flows:** For sensitive operations (registrations, invitations, password recovery).
-- **Granular permissioning:** Role-secured endpoints for admins, barbers, and clients.
-- **Modern user experience:** Email notifications, mobile-ready, profile images, and detailed dashboards.
-- **OpenAPI-compliant schema:** Complete, self-documented API.
+SECRET_KEY=123456
+DJANGO_ALLOWED_HOSTS=*
+DJANGO_SETTINGS_MODULE=config.settings.dev
+
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+POSTGRES_DB=mydb
+POSTGRES_USER=myuser
+POSTGRES_PASSWORD=12345678
+
+EMAIL_HOST=sandbox.smtp.mailtrap.io
+EMAIL_PORT=2525
+EMAIL_HOST_USER=SEU_USER_MAILTRAP
+EMAIL_HOST_PASSWORD=SUA_SENHA_MAILTRAP
+
+---
+
+3. SUBIR O PROJETO
+
+---
+
+No terminal (dentro da pasta do projeto):
+
+docker compose -f docker-compose.dev.yml --env-file .env.dev up --build
+
+---
+
+4. ACESSO AO SISTEMA
+
+---
+
+Frontend:
+http://localhost:3000/
+
+Backend:
+http://localhost:8000/admin
+
+---
+
+5. CRIAR USUÁRIO ADMIN (OPCIONAL)
+
+---
+
+docker compose -f docker-compose.dev.yml --env-file .env.dev exec backend sh
+
+python manage.py createsuperuser
+
+Sugestão:
+Username: admin
+Senha: Admin@123
+
+---
+
+6. POPULAR BANCO DE DADOS (SEED)
+
+---
+
+docker compose -f docker-compose.dev.yml --env-file .env.dev exec backend python manage.py flush --no-input
+
+docker compose -f docker-compose.dev.yml --env-file .env.dev exec backend python manage.py seed
+
+---
+
+7. USUÁRIOS PARA TESTE
+
+---
+
+CLIENTE:
+Username: teste
+Senha: 12345678
+
+BARBEIRO:
+Username: joao
+Senha: 12345678
+
+---
+
+8. RESETAR BANCO DE DADOS
+
+---
+
+docker compose -f docker-compose.dev.yml --env-file .env.dev down --volumes
+
+docker compose -f docker-compose.dev.yml --env-file .env.dev up --build
+
+---
+
+9. OBSERVAÇÕES IMPORTANTES
+
+---
+
+* Um cliente não pode ter mais de um agendamento no mesmo dia
+* Caso ocorra erro ao agendar, trocar cliente ou data
+* Emails são simulados via Mailtrap
+
+---
+
+10. VERSÕES UTILIZADAS
+
+---
+
+Docker: 28.3.2
+Docker Compose: v2.38.2
+
+Python: 3.12.13
+Django: 5.2.1
+
+PostgreSQL: 15.17
+Redis: 7.4.8
+
+Node: v22.22.2
+NPM: 10.9.7
+
+---
+
+11. DEPENDÊNCIAS BACKEND
+
+---
+
+amqp==5.3.1
+asgiref==3.8.1
+attrs==26.1.0
+billiard==4.2.4
+celery==5.5.3
+click==8.3.2
+click-didyoumean==0.3.1
+click-plugins==1.1.1.2
+click-repl==0.3.0
+coverage==7.8.0
+Django==5.2.1
+django-cors-headers==4.7.0
+django-extensions==4.1
+djangorestframework==3.16.0
+djangorestframework_simplejwt==5.5.0
+drf-spectacular==0.28.0
+inflection==0.5.1
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+kombu==5.5.4
+packaging==26.1
+pillow==11.2.1
+prompt_toolkit==3.0.52
+psycopg2-binary==2.9.10
+pydotplus==2.0.2
+pygraphviz==1.14
+PyJWT==2.9.0
+pyparsing==3.2.3
+python-dateutil==2.9.0.post0
+PyYAML==6.0.3
+redis==6.2.0
+referencing==0.37.0
+rpds-py==0.30.0
+six==1.17.0
+sqlparse==0.5.3
+typing_extensions==4.15.0
+tzdata==2025.2
+uritemplate==4.2.0
+vine==5.1.0
+wcwidth==0.6.0
+
+---
+
+## FIM
