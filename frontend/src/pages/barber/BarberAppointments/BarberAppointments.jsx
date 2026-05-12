@@ -89,7 +89,7 @@ function BarberAppointments() {
         label="Appointments"
         itemsPerPage={7}
         loading={isLoadingAppointments}
-        emptyMessage="No appointments found." //
+        emptyMessage="Nenhum agendamento encontrado." //
       >
         <Pagination.Action>
           <div className={styles.action}>
@@ -120,7 +120,7 @@ function BarberAppointments() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="client" size="ty" black />
-            <span className={styles.tableTitleName}>Client</span>
+            <span className={styles.tableTitleName}>Cliente</span>
           </div>
         </Pagination.Column>
 
@@ -134,21 +134,21 @@ function BarberAppointments() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="revenue" size="ty" black />
-            <span className={styles.tableTitleName}>Spent</span>
+            <span className={styles.tableTitleName}>Gasto</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="service" size="ty" black />
-            <span className={styles.tableTitleName}>Services</span>
+            <span className={styles.tableTitleName}>Serviços</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="email_base" size="ty" black />
-            <span className={styles.tableTitleName}>Reminder</span>
+            <span className={styles.tableTitleName}>Lembrete</span>
           </div>
         </Pagination.Column>
 

@@ -100,7 +100,7 @@ function ClientDashboard() {
             <span className={styles.upcomingAppointmentDate}>{profile.upcoming_appointment?.date.replaceAll('-', ' / ')}</span>
           </div>
         ) : (
-          <span className={styles.empty}>No future appointment</span>
+          <span className={styles.empty}>Sem agendamento futuro</span>
         )}
       </StatCard>
 
@@ -119,7 +119,7 @@ function ClientDashboard() {
         icon="date"
         label="Consultas concluídas"
         itemsPerPage={5}
-        emptyMessage="No appointments found." //
+        emptyMessage="Nenhum agendamento encontrado." //
       >
         <Pagination.Action>
           <div className={styles.action}></div>
@@ -188,7 +188,7 @@ function ClientDashboard() {
         icon="review"
         label="Avaliações mais recentes"
         itemsPerPage={5}
-        emptyMessage="No reviews yet" //
+        emptyMessage="Ainda não há avaliações." //
       >
         <Pagination.Action>
           <div className={styles.action}></div>

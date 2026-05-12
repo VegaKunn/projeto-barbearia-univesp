@@ -120,7 +120,7 @@ function AdminAppointments() {
         label="Appointments"
         itemsPerPage={7}
         loading={isLoadingAppointments}
-        emptyMessage="No appointments found." //
+        emptyMessage="Nenhum agendamento encontrado." //
       >
         <Pagination.Action>
           <div className={styles.action}>

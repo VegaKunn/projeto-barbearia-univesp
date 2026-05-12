@@ -15,8 +15,8 @@ function NotFound() {
           </h1>
           <p className={styles.subtitle}>Oops! We can&apos;t seem to find the page you&apos;re looking for.</p>
           <div className={styles.desc}>
-            <p>The page may have moved, or the URL may be incorrect.</p>
-            <p>Go back to the homepage and continue browsing.</p>
+            <p>A página pode ter sido movida ou o URL pode estar incorreto.</p>
+            <p>Volte à página inicial e continue navegando.</p>
           </div>
           <Button href="/" color="transdark" size="md" width="content">
             Go back to home

@@ -64,9 +64,10 @@ function buscarESubstituir(dir, frase, novaFrase, ignoreDirs = [], base = "") {
 // Exemplo de uso
 const ignore = ["node_modules", ".git", "dist", ".github"];
 
-const frase = "Barbeiros</span>";
-const novaFrase = "Barbeiros</span>";
-
+const frase =
+  "Sua senha não pode ser muito semelhante às suas outras informações pessoais.";
+const novaFrase =
+  "Sua senha não pode ser muito semelhante às suas outras informações pessoais.";
 const resultados = buscarESubstituir(process.cwd(), frase, novaFrase, ignore);
 
 // Exibir resultados

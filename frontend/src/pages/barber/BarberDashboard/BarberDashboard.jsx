@@ -115,7 +115,7 @@ function BarberDashboard() {
         icon="date"
         label="Consulta futuras"
         itemsPerPage={5}
-        emptyMessage="No appointments found." //
+        emptyMessage="Nenhum agendamento encontrado." //
       >
         <Pagination.Action>
           <div className={styles.action}></div>
@@ -184,7 +184,7 @@ function BarberDashboard() {
         icon="review"
         label="Avaliações mais recentes"
         itemsPerPage={3}
-        emptyMessage="No reviews yet" //
+        emptyMessage="Ainda não há avaliações." //
       >
         <Pagination.Action>
           <div className={styles.action}></div>

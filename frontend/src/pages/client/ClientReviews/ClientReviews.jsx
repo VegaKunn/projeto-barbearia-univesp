@@ -245,7 +245,7 @@ function BarberReviews() {
         label="Reviews"
         itemsPerPage={5}
         loading={isLoading}
-        emptyMessage="No reviews yet." //
+        emptyMessage="Ainda não há avaliações.." //
       >
         <Pagination.Action>
           <div className={styles.action}>
