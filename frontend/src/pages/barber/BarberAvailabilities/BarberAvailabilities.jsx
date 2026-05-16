@@ -43,7 +43,7 @@ function BarberAvailabilities() {
     <Pagination
       className={styles.barberAvailabilities}
       icon="availability"
-      label="Availabilities"
+      label="disponibilidades"
       itemsPerPage={5}
       loading={isLoading}
       emptyMessage="No availabilities found." //
@@ -61,11 +61,11 @@ function BarberAvailabilities() {
             <span className={styles.line}>
               {isLoading ? (
                 <>
-                  <Spinner size="sm" /> Refreshing...
+                  <Spinner size="sm" /> Recarregando...
                 </>
               ) : (
                 <>
-                  <Icon name="refresh" size="ty" /> Refresh availabilities
+                  <Icon name="refresh" size="ty" /> Recarregar disponibilidades
                 </>
               )}
             </span>
@@ -84,7 +84,7 @@ function BarberAvailabilities() {
       <Pagination.Column>
         <div className={styles.tableTitle}>
           <Icon name="hourglass" size="ty" black />
-          <span className={styles.tableTitleName}>Slots</span>
+          <span className={styles.tableTitleName}>Horarios</span>
         </div>
       </Pagination.Column>
 

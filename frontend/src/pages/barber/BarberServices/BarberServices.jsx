@@ -92,7 +92,7 @@ function BarberServices() {
       <Pagination
         className={styles.barberServices}
         icon="service"
-        label="Services"
+        label="Serviços"
         itemsPerPage={5}
         loading={isLoading}
         emptyMessage="No services offered." //
@@ -110,11 +110,11 @@ function BarberServices() {
               <span className={styles.line}>
                 {isLoading ? (
                   <>
-                    <Spinner size={'sm'} /> Refreshing...
+                    <Spinner size={'sm'} /> Recarregando...
                   </>
                 ) : (
                   <>
-                    <Icon name="refresh" size="ty" /> Refresh services
+                    <Icon name="refresh" size="ty" /> Recarregar serviços
                   </>
                 )}
               </span>
@@ -128,7 +128,7 @@ function BarberServices() {
               onClick={openCreatePopup} //
             >
               <Icon name="plus" size="ty" />
-              <span>Create service</span>
+              <span>Criar Serviço</span>
             </Button>
           </div>
         </Pagination.Action>
@@ -137,21 +137,21 @@ function BarberServices() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="scissors" size="ty" black />
-            <span className={styles.tableTitleName}>Name</span>
+            <span className={styles.tableTitleName}>Nome</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="revenue" size="ty" black />
-            <span className={styles.tableTitleName}>Price</span>
+            <span className={styles.tableTitleName}>Preço</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="id" size="ty" black />
-            <span className={styles.tableTitleName}>Service ID</span>
+            <span className={styles.tableTitleName}>Serviço ID</span>
           </div>
         </Pagination.Column>
 

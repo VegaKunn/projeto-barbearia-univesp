@@ -213,7 +213,7 @@ function AdminSettings() {
         </StatCard>
       </div>
 
-      {/* Upload Picture Modal */}
+      {/* Carregar imagem Modal */}
       <Modal
         open={uploadPicturePopup}
         fields={{ profile_image: null }}
@@ -222,8 +222,8 @@ function AdminSettings() {
         onSubmit={({ profile_image }) => handleUploadPicture(profile_image)}
         onClose={closeUploadPicturePopup}
       >
-        <Modal.Title icon="image">Upload Picture</Modal.Title>
-        <Modal.Description>Select a profile image to upload.</Modal.Description>
+        <Modal.Title icon="image">Carregar imagem</Modal.Title>
+        <Modal.Description>Selecione uma imagem de perfil para carregar.</Modal.Description>
 
         <Input
           label="Profile Picture"

@@ -260,7 +260,7 @@ function BarberReviews() {
               <span className={styles.line}>
                 {isLoading ? (
                   <>
-                    <Spinner size="sm" /> Refreshing...
+                    <Spinner size="sm" /> Recarregando...
                   </>
                 ) : (
                   <>

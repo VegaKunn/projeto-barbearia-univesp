@@ -143,14 +143,14 @@ function ClientDashboard() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="revenue" size="ty" black />
-            <span className={styles.tableTitleName}>Spent</span>
+            <span className={styles.tableTitleName}>Gasto</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="service" size="ty" black />
-            <span className={styles.tableTitleName}>Services</span>
+            <span className={styles.tableTitleName}>Serviços</span>
           </div>
         </Pagination.Column>
 
@@ -171,7 +171,7 @@ function ClientDashboard() {
             </Pagination.Cell>
 
             <Pagination.Cell>
-              <div className={styles.amountSpent}>
+              <div className={styles.amountGasto}>
                 <span className={styles.amount}>${appointment.amount_spent}</span>
               </div>
             </Pagination.Cell>

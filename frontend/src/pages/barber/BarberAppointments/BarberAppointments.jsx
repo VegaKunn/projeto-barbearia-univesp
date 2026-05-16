@@ -86,7 +86,7 @@ function BarberAppointments() {
     <div className={styles.barberAppointments}>
       <Pagination
         icon="appointment"
-        label="Appointments"
+        label="Agendamentos"
         itemsPerPage={7}
         loading={isLoadingAppointments}
         emptyMessage="Nenhum agendamento encontrado." //
@@ -104,7 +104,7 @@ function BarberAppointments() {
               <span className={styles.line}>
                 {isLoadingAppointments ? (
                   <>
-                    <Spinner size="sm" /> Refreshing...
+                    <Spinner size="sm" /> Recarregando...
                   </>
                 ) : (
                   <>
@@ -176,7 +176,7 @@ function BarberAppointments() {
             </Pagination.Cell>
 
             <Pagination.Cell>
-              <div className={styles.amountSpent}>
+              <div className={styles.amountGasto}>
                 <span className={styles.amount}>${appointment.amount_spent}</span>
               </div>
             </Pagination.Cell>
@@ -187,7 +187,7 @@ function BarberAppointments() {
 
             <Pagination.Cell>
               <Tag className={styles.reminderTag} color={appointment.reminder_email_sent ? 'blue' : 'yellow'}>
-                {appointment.reminder_email_sent ? 'Sent' : 'Not Sent'}
+                {appointment.reminder_email_sent ? 'Enviado' : 'Não enviado'}
               </Tag>
             </Pagination.Cell>
 
@@ -196,7 +196,9 @@ function BarberAppointments() {
                 className={styles.statusTag}
                 color={appointment.status === 'COMPLETED' ? 'green' : appointment.status === 'ONGOING' ? 'yellow' : 'red'}
               >
-                {appointment.status.charAt(0) + appointment.status.slice(1).toLowerCase()}
+                {appointment.status.charAt(0) + appointment.status.slice(1).toLowerCase() == 'Completed'
+                  ? 'completado'
+                  : 'Em Andamento'}
               </Tag>
             </Pagination.Cell>
           </Pagination.Row>

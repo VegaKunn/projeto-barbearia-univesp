@@ -113,7 +113,7 @@ function Modal({
                 disabled={isLoading}
                 wide //
               >
-                {isMultiStep && stepIndex > 0 ? 'Back' : 'Cancel'}
+                {isMultiStep && stepIndex > 0 ? 'Voltar' : 'Cancelar'}
               </Button>
 
               <Button
@@ -129,7 +129,7 @@ function Modal({
                       <Spinner size="sm" /> {action.loading}
                     </>
                   ) : isMultiStep && stepIndex < steps.length - 1 ? (
-                    'Next'
+                    'Proximo'
                   ) : (
                     action.submit
                   )}
@@ -139,7 +139,7 @@ function Modal({
 
             {isMultiStep && (
               <div className={styles.modalStepIndicator}>
-                Step {stepIndex + 1} of {steps.length}
+                Etapa {stepIndex + 1} de {steps.length}
               </div>
             )}
           </div>

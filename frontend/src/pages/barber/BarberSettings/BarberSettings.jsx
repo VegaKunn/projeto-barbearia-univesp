@@ -169,7 +169,7 @@ function BarberSettings() {
             >
               <div className={styles.inputGroup}>
                 <Input
-                  label="Username"
+                  label="Nome de usuario"
                   name="username"
                   type="text"
                   placeholder={profile.username}
@@ -177,7 +177,7 @@ function BarberSettings() {
                   disabled={isUpdatingProfile}
                 />
                 <Input
-                  label="Description"
+                  label="Descrição"
                   name="description"
                   type="text"
                   placeholder={profile.description}
@@ -188,7 +188,7 @@ function BarberSettings() {
 
               <div className={styles.inputGroup}>
                 <Input
-                  label="Name"
+                  label="Nome"
                   name="name"
                   type="text"
                   placeholder={profile.name}
@@ -196,7 +196,7 @@ function BarberSettings() {
                   disabled={isUpdatingProfile} //
                 />
                 <Input
-                  label="Surname"
+                  label="Sobrenome"
                   name="surname"
                   type="text"
                   placeholder={profile.surname}
@@ -248,47 +248,49 @@ function BarberSettings() {
         </StatCard>
       </div>
 
-      {/* Upload Picture Modal */}
+      {/* Carregar imagem Modal */}
       <Modal
         open={uploadPicturePopup}
         fields={{ profile_image: null }}
         action={{ submit: 'Upload', loading: 'Uploading...' }}
-        onValidate={(payload) => isAnyFieldSet(payload, 'Please select an image to upload.')}
+        onValidate={(payload) => isAnyFieldSet(payload, 'Selecione uma imagem para enviar.')}
         onSubmit={({ profile_image }) => handleUploadPicture(profile_image)}
         onClose={closeUploadPicturePopup}
       >
-        <Modal.Title icon="image">Upload Picture</Modal.Title>
-        <Modal.Description>Select a profile image to upload.</Modal.Description>
+        <Modal.Title icon="image">Carregar imagem</Modal.Title>
+        <Modal.Description>Selecione uma imagem de perfil para carregar.</Modal.Description>
 
         <Input
           label="Profile Picture"
           name="profile_image"
           type="file"
           accept="image/*"
-          placeholder="Choose an image" //
+          placeholder="Escolha uma imagem" //
         />
       </Modal>
 
       {/* Delete Picture Modal */}
       <Modal
         open={deletePicturePopup}
-        action={{ submit: 'Delete', loading: 'Deleting...' }}
+        action={{ submit: 'Deletar', loading: 'Deletando...' }}
         onSubmit={handleDeletePicture}
         onClose={closeDeletePicturePopup}
       >
         <Modal.Title icon="warning">Delete Picture</Modal.Title>
-        <Modal.Description>Are you sure you want to delete your profile picture? This action cannot be undone.</Modal.Description>
+        <Modal.Description>
+          Tem certeza de que deseja excluir sua foto de perfil? Esta ação não pode ser desfeita.
+        </Modal.Description>
       </Modal>
 
       {/* Excluir perfil Modal */}
       <Modal
         open={deleteProfilePopup}
-        action={{ submit: 'Delete', loading: 'Deleting...' }}
+        action={{ submit: 'Deletar', loading: 'Deletando...' }}
         onSubmit={handleDeleteProfile}
         onClose={closeDeleteProfilePopup}
       >
         <Modal.Title icon="warning">Excluir perfil</Modal.Title>
-        <Modal.Description>Are you sure you want to delete your profile? This action cannot be undone.</Modal.Description>
+        <Modal.Description>Tem certeza de que deseja excluir seu perfil? Esta ação não pode ser desfeita.</Modal.Description>
       </Modal>
     </>
   );

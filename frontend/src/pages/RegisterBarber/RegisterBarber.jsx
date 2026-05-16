@@ -37,7 +37,7 @@ function RegisterBarber() {
       setEmail(email);
       setStatus('success');
     } catch (error) {
-      setMessage(error?.response?.data?.detail || 'The regisitration link is invalid or expired.');
+      setMessage(error?.response?.data?.detail || 'O link de registro é inválido ou expirou.');
       setStatus('error');
     }
   }, [uidb64, token]);
@@ -77,8 +77,8 @@ function RegisterBarber() {
    * Custom Form field validation
    */
   const validate = ({ password, passwordConfirm }) => {
-    if (!password || password.length < 8) return 'Password is too short';
-    if (password !== passwordConfirm) return 'Passwords do not match';
+    if (!password || password.length < 8) return 'A senha é muito curta';
+    if (password !== passwordConfirm) return 'As senhas não coincidem';
     return undefined;
   };
 
@@ -104,22 +104,22 @@ function RegisterBarber() {
           <SidePanel heading="Barber Invitation" subheading="Complete your barber account setup">
             <SidePanel.Inner>
               <div className={styles.description}>
-                <h2>Finish your registration as a barber</h2>
+                <h2>Conclua seu cadastro como barbeiro</h2>
                 <ul className={styles.features}>
                   <li>
                     <Icon name="barber" size="sm" />
-                    <p>Manage your profile, clients, and appointments.</p>
+                    <p>Gerencie seu perfil, clientes e compromissos.</p>
                   </li>
                   <li>
                     <Icon name="service" size="sm" />
-                    <p>View your availability and set your offered services.</p>
+                    <p>Veja sua disponibilidade e defina os serviços oferecidos.</p>
                   </li>
                 </ul>
               </div>
             </SidePanel.Inner>
 
             <SidePanel.Actions>
-              <p className={styles.note}>Already have an account?</p>
+              <p className={styles.note}>Já tenho uma conta?</p>
 
               <Button href="/login" color="secondary" size="md" width="content">
                 Login!
@@ -159,7 +159,7 @@ function RegisterBarber() {
                 <span className={styles.line}>
                   {loading ? (
                     <>
-                      <Spinner size={'sm'} /> Signing up...
+                      <Spinner size={'sm'} /> Inscrever-se...
                     </>
                   ) : (
                     'Criar Conta'
@@ -178,7 +178,7 @@ function RegisterBarber() {
           <Card className={styles.error}>
             <div className={styles.center}>
               <Spinner size="lg" />
-              <h2>Retreiving your email...</h2>
+              <h2>Recuperando seu e-mail...</h2>
             </div>
           </Card>
         </Hero.Right>

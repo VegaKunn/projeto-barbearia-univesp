@@ -51,8 +51,7 @@ function buscarPalavra(dir, palavra, ignoreDirs = [], base = "") {
 
 // Exemplo de uso
 const ignore = ["node_modules", ".git", "dist", ".github", "backend"];
-const palavra =
-  "BarberManager is a comprehensive SaaS platform designed to streamline, digitalize, and optimize everyday operations in barber shops. With tools for booking, staff, client, and schedule management, BarberManager ensures efficient workflows for admins, barbers, and clients alike.";
+const palavra = "Consulta futuras";
 
 const resultados = buscarPalavra(process.cwd(), palavra, ignore);
 

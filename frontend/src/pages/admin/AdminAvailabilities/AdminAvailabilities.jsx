@@ -183,7 +183,7 @@ function AdminAvailabilities() {
                     <span className={styles.line}>
                       {isLoadingAvailabilities ? (
                         <>
-                          <Spinner size="sm" /> Refreshing...
+                          <Spinner size="sm" /> Recarregando...
                         </>
                       ) : (
                         <>

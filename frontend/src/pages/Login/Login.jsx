@@ -70,15 +70,15 @@ function Login() {
                 <ul className={styles.features}>
                   <li>
                     <Icon name="appointment" size="sm" />
-                    <p>Book and manage appointments easily.</p>
+                    <p>Reserve e gerencie compromissos facilmente.</p>
                   </li>
                   <li>
                     <Icon name="service" size="sm" />
-                    <p>Personalized experience for barbers and clients.</p>
+                    <p>Experiência personalizada para barbeiros e clientes.</p>
                   </li>
                   <li>
                     <Icon name="review" size="sm" />
-                    <p>View and share reviews.</p>
+                    <p>Veja e compartilhe comentários.</p>
                   </li>
                 </ul>
               </div>
@@ -100,7 +100,7 @@ function Login() {
               <h2 className={styles.label}>Login</h2>
 
               <Input
-                label="Email or username"
+                label="Email ou nome de usuario"
                 name="identifier"
                 type="text"
                 autoComplete="username"
@@ -110,7 +110,7 @@ function Login() {
               />
 
               <Input
-                label="Password"
+                label="Senha"
                 name="password"
                 type="password"
                 autoComplete="current-password"
@@ -139,7 +139,7 @@ function Login() {
               </Button>
 
               <Button className={styles.forgotBtn} href="/reset-password" size="sm" color="link">
-                Forgot password?
+                Esqueci a senha!
               </Button>
 
               <Error />

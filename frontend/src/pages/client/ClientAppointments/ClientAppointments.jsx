@@ -217,7 +217,7 @@ function ClientAppointments() {
           type="dropdown"
           size="md"
           name="date"
-          label="Date"
+          label="Data"
           fetcher={() => fetchAvailabilities(fields.barber_id)}
           mapOption={(availability) => ({ key: availability.date, value: availability.date })}
           required //
@@ -227,7 +227,7 @@ function ClientAppointments() {
           type="dropdown"
           size="md"
           name="slot"
-          label="Slot"
+          label="Horario"
           fetcher={() => fetchSlots(fields.barber_id, fields.date)}
           reloadKey={`${fields.barber_id}-${fields.date}`}
           mapOption={(slot) => ({ key: slot, value: slot })}
@@ -300,7 +300,7 @@ function ClientAppointments() {
         <div className={styles.confirmRow}>
           <div className={styles.confirmBlock}>
             <Icon name="barber" size="ty" black />
-            <span className={styles.confirmLabel}>Barber:</span>
+            <span className={styles.confirmLabel}>Barbeiro:</span>
           </div>
           <div className={styles.confirmContent}>
             <div className={styles.confirmValue}>
@@ -320,7 +320,7 @@ function ClientAppointments() {
         <div className={styles.confirmRow}>
           <div className={styles.confirmBlock}>
             <Icon name="service" size="ty" black />
-            <span className={styles.confirmLabel}>Services:</span>
+            <span className={styles.confirmLabel}>Serviço:</span>
           </div>
           <div className={styles.confirmContent}>
             <div className={styles.confirmValue}>
@@ -340,7 +340,7 @@ function ClientAppointments() {
         <div className={styles.confirmRow}>
           <div className={styles.confirmBlock}>
             <Icon name="calendar" size="ty" black />
-            <span className={styles.confirmLabel}>Date:</span>
+            <span className={styles.confirmLabel}>Data:</span>
           </div>
           <div className={styles.confirmContent}>
             <div className={styles.confirmValue}>{fields.date || '-'}</div>
@@ -350,7 +350,7 @@ function ClientAppointments() {
         <div className={styles.confirmRow}>
           <div className={styles.confirmBlock}>
             <Icon name="availability" size="ty" black />
-            <span className={styles.confirmLabel}>Slot:</span>
+            <span className={styles.confirmLabel}>Horario:</span>
           </div>
           <div className={styles.confirmContent}>
             <div className={styles.confirmValue}>{fields.slot || '-'}</div>
@@ -385,7 +385,7 @@ function ClientAppointments() {
               <span className={styles.line}>
                 {isLoadingAppointments ? (
                   <>
-                    <Spinner size="sm" /> Refreshing...
+                    <Spinner size="sm" /> Recarregando...
                   </>
                 ) : (
                   <>
@@ -426,14 +426,14 @@ function ClientAppointments() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="revenue" size="ty" black />
-            <span className={styles.tableTitleName}>Spent</span>
+            <span className={styles.tableTitleName}>Gasto</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="service" size="ty" black />
-            <span className={styles.tableTitleName}>Services</span>
+            <span className={styles.tableTitleName}>Serviços</span>
           </div>
         </Pagination.Column>
 
@@ -475,7 +475,7 @@ function ClientAppointments() {
             </Pagination.Cell>
 
             <Pagination.Cell>
-              <div className={styles.amountSpent}>
+              <div className={styles.amountGasto}>
                 <span className={styles.amount}>${appointment.amount_spent}</span>
               </div>
             </Pagination.Cell>
@@ -521,7 +521,7 @@ function ClientAppointments() {
         open={bookPopup}
         fields={bookFields}
         initialStepIndex={bookFields.barber_id ? 1 : 0}
-        action={{ submit: 'Book', loading: 'Booking...' }}
+        action={{ submit: 'Enviar', loading: 'Enviando...' }}
         onSubmit={handleBookAppointment}
         onClose={closeBookPopup}
       >
@@ -553,7 +553,7 @@ function ClientAppointments() {
         </Modal.Step>
 
         {/* STEP 3: Select Date & Time slot */}
-        <Modal.Step validate={(fields) => (!fields.date || !fields.slot ? 'Please select date and time slot.' : undefined)}>
+        <Modal.Step validate={(fields) => (!fields.date || !fields.slot ? 'Selecione a data e o horário.' : undefined)}>
           <Modal.Title icon="calendar">Selecione a data e a hora.</Modal.Title>
           <Modal.Description>
             Selecione uma data e horário disponíveis. Somente os horários disponíveis serão exibidos.

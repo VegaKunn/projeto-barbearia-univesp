@@ -63,7 +63,7 @@ function AdminClients() {
               <span className={styles.line}>
                 {isLoading ? (
                   <>
-                    <Spinner size="sm" /> Refreshing...
+                    <Spinner size="sm" /> Recarregando...
                   </>
                 ) : (
                   <>
@@ -100,7 +100,7 @@ function AdminClients() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="revenue" size="ty" black />
-            <span className={styles.tableTitleName}>Spent</span>
+            <span className={styles.tableTitleName}>Gasto</span>
           </div>
         </Pagination.Column>
 

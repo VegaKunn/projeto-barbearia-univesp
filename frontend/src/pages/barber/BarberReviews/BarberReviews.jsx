@@ -97,7 +97,7 @@ function BarberReviews() {
               <span className={styles.line}>
                 {isLoading ? (
                   <>
-                    <Spinner size="sm" /> Refreshing...
+                    <Spinner size="sm" /> Recarregando...
                   </>
                 ) : (
                   <>
@@ -113,7 +113,7 @@ function BarberReviews() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="client" size="ty" black />
-            <span className={styles.tableTitleName}>Client</span>
+            <span className={styles.tableTitleName}>Cliente</span>
           </div>
         </Pagination.Column>
 

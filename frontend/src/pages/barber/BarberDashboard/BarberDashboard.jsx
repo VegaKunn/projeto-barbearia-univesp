@@ -104,7 +104,7 @@ function BarberDashboard() {
       </StatCard>
 
       {/* Average Rating */}
-      <StatCard icon="rating" label="Average Rating">
+      <StatCard icon="rating" label="Avaliação Média">
         <span className={styles.value}>
           <RadialChart value={profile.average_rating} max={5} size="70" />
         </span>
@@ -125,7 +125,7 @@ function BarberDashboard() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="client" size="ty" black />
-            <span className={styles.tableTitleName}>Client</span>
+            <span className={styles.tableTitleName}>Cliente</span>
           </div>
         </Pagination.Column>
 
@@ -139,14 +139,14 @@ function BarberDashboard() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="revenue" size="ty" black />
-            <span className={styles.tableTitleName}>Spent</span>
+            <span className={styles.tableTitleName}>Gasto</span>
           </div>
         </Pagination.Column>
 
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="service" size="ty" black />
-            <span className={styles.tableTitleName}>Services</span>
+            <span className={styles.tableTitleName}>Serviços</span>
           </div>
         </Pagination.Column>
 
@@ -167,7 +167,7 @@ function BarberDashboard() {
             </Pagination.Cell>
 
             <Pagination.Cell>
-              <div className={styles.amountSpent}>
+              <div className={styles.amountGasto}>
                 <span className={styles.amount}>${appointment.amount_spent}</span>
               </div>
             </Pagination.Cell>
@@ -194,7 +194,7 @@ function BarberDashboard() {
         <Pagination.Column>
           <div className={styles.tableTitle}>
             <Icon name="client" size="ty" black />
-            <span className={styles.tableTitleName}>Client</span>
+            <span className={styles.tableTitleName}>Cliente</span>
           </div>
         </Pagination.Column>
 

@@ -17,7 +17,7 @@ const adminNav = [
 ];
 const barberNav = [
   { to: '/barber/dashboard', label: 'Dashboard', icon: 'dashboard' },
-  { to: '/barber/services', label: 'Services', icon: 'service' },
+  { to: '/barber/services', label: 'Serviços', icon: 'service' },
   { to: '/barber/appointments', label: 'Agendamentos', icon: 'appointment' },
   { to: '/barber/availabilities', label: 'Disponibilidade', icon: 'availability' },
   { to: '/barber/reviews', label: 'Reviews', icon: 'review' },
