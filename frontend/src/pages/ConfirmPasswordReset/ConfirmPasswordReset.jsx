@@ -59,8 +59,8 @@ function ConfirmPasswordReset() {
    * Custom Form field validation
    */
   const validate = ({ password, passwordConfirm }) => {
-    if (!password || password.length < 8) return 'Password is too short';
-    if (password !== passwordConfirm) return 'Passwords do not match';
+    if (!password || password.length < 8) return 'Senha é muito curta';
+    if (password !== passwordConfirm) return 'As senhas não coincidem.';
     return undefined;
   };
 

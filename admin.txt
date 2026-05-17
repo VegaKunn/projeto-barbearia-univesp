@@ -2,7 +2,7 @@ docker compose -f docker-compose.dev.yml --env-file .env.dev exec backend sh
 
 python manage.py createsuperuser
 
-Username: admin
+Username: Vega
 Email: admin@email.com
 Password: Barber2026!
 

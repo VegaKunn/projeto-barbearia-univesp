@@ -51,7 +51,7 @@ function buscarPalavra(dir, palavra, ignoreDirs = [], base = "") {
 
 // Exemplo de uso
 const ignore = ["node_modules", ".git", "dist", ".github", "backend"];
-const palavra = "Consulta futuras";
+const palavra = "Não Enviado";
 
 const resultados = buscarPalavra(process.cwd(), palavra, ignore);
 

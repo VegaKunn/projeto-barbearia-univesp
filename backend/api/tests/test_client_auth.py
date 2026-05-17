@@ -140,7 +140,7 @@ class ClientAuthFlowTest(APITestCase):
         login_data = {'email': user.email, 'password': 'WrongPass!'}
         response = self.client.post(self.login_url, login_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
-        self.assertEqual(response.data.get('detail'), 'Invalid credentials.')
+        self.assertEqual(response.data.get('detail'), 'Credenciais invalidas')
 
 
     def test_logout_fails_without_refresh_token(self, mock_send_mail):

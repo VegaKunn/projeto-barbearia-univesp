@@ -64,8 +64,8 @@ function buscarESubstituir(dir, frase, novaFrase, ignoreDirs = [], base = "") {
 // Exemplo de uso
 const ignore = ["node_modules", ".git", "dist", ".github"];
 
-const frase = "Selecione uma imagem de perfil para carregar.";
-const novaFrase = "Selecione uma imagem de perfil para carregar.";
+const frase = "Credenciais invalidas";
+const novaFrase = "Credenciais invalidas";
 const resultados = buscarESubstituir(process.cwd(), frase, novaFrase, ignore);
 
 // Exibir resultados

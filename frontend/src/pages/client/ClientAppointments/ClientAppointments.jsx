@@ -486,7 +486,7 @@ function ClientAppointments() {
 
             <Pagination.Cell>
               <Tag className={styles.reminderTag} color={appointment.reminder_email_sent ? 'blue' : 'yellow'}>
-                {appointment.reminder_email_sent ? 'Sent' : 'Not Sent'}
+                {appointment.reminder_email_sent ? 'Enviado' : 'Não Enviado'}
               </Tag>
             </Pagination.Cell>
 
@@ -495,7 +495,9 @@ function ClientAppointments() {
                 className={styles.statusTag}
                 color={appointment.status === 'COMPLETED' ? 'green' : appointment.status === 'ONGOING' ? 'yellow' : 'red'}
               >
-                {appointment.status.charAt(0) + appointment.status.slice(1).toLowerCase()}
+                {appointment.status.charAt(0) + appointment.status.slice(1).toLowerCase() == 'Ongoing'
+                  ? 'EM ANDAMENTO'
+                  : 'Completado'}
               </Tag>
             </Pagination.Cell>
 

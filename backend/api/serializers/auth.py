@@ -161,7 +161,7 @@ class LoginSerializer(serializers.Serializer):
         user = authenticate(username=identifier, password=password)
 
         if not user:
-            raise PermissionDenied('Invalid credentials.')
+            raise PermissionDenied('Credenciais invalidas')
 
         if not user.is_active:
             raise PermissionDenied('Account inactive. Please verify your email.')
